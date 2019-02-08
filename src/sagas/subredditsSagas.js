@@ -32,7 +32,13 @@ function* fetchNewPosts() {
     try {
          const subredditId = yield select((state) => state.subredditId);
          const posts = yield select((state) => state.posts);
-         const lastPost = posts.length ? posts[0].data.name : null
+         const newPosts = yield select((state) => state.newPosts);
+         let lastPost = null;
+         if (newPosts.length) {
+            lastPost = newPosts[0].data.name
+         } else if (posts.length) {
+            lastPost = posts[0].data.name;
+         }
          const response = yield call(axios.get, `http://www.reddit.com/r/${subredditId}/new.json`, {
              params: {
              limit: 100,
