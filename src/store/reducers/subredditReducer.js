@@ -46,7 +46,7 @@ export default function subredditReducer(state = initialState, action) {
             });
         case SUBREDDIT_NEW_POSTS:
             return Object.assign({}, state, {
-                newPosts: state.newPosts.concat(action.posts),
+                newPosts: action.posts.concat(state.newPosts),
             });
         case SUBREDDIT_VIEW_NEW_POSTS:
             return Object.assign({}, state, {
