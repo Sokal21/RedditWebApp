@@ -53,22 +53,6 @@
     background-color: #c4d9ff;
 }
 
-.subreddit-list__image {
-    height: 107px;
-    width: 107px;
-    border-radius: 100%;
-    object-fit: cover;
-    margin-right: 20px;
-}
-
-.subreddit-list__info--subreddit {
-    display: inline-block !important;
-}
-
-.subreddit-list__info--author {
-    display: inline-block !important;
-}
-
 .margin-top {
     margin-top: 4px ;
 }

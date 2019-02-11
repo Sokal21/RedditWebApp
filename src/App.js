@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SubredditSearch from './components/subredditSearch';
+import SubredditSearch from './components/SubredditSearch';
 import SubredditList from './components/SubredditList';
 import './App.css';
 
