@@ -17,7 +17,7 @@ function* fetchPosts() {
         const lastPost = posts.length ? posts[posts.length-1].data.name : null
         const response = yield call(axios.get, `http://www.reddit.com/r/${subredditId}/new.json`, {
             params: {
-            limit: 5,
+            limit: 10,
             sort: 'new',
             after: lastPost,
             },
@@ -41,7 +41,7 @@ function* fetchNewPosts() {
          }
          const response = yield call(axios.get, `http://www.reddit.com/r/${subredditId}/new.json`, {
              params: {
-             limit: 100,
+             limit: 25,
              sort: 'new',
              before: lastPost,
              },

@@ -31,7 +31,7 @@ export default function subredditReducer(state = initialState, action) {
             return Object.assign({}, state, {
                 posts: state.posts.concat(action.posts),
                 isFetching: false,
-                hasMore: action.posts.length === 5,
+                hasMore: action.posts.length === 10,
             });
         case SUBREDDIT_FAIL_FETCHING_POSTS:
             return Object.assign({}, state, {

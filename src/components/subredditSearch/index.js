@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Input } from 'semantic-ui-react';
+import { withRouter } from "react-router";
 import {
     setSubredditAction,
     startedFetchingAction,
@@ -15,14 +16,23 @@ function SubredditSearch(props) {
         setSubreddit,
         startedFetching,    
         resetPosts,
+        match,
+        history,
     } = props;
+
+    useEffect(() => {
+        setSubreddit(match.params.subredditId);
+        startedFetching();
+    }, []);
+
     return (
         <form
             className="subreddit-search__container"
             onSubmit={(event) => {
-                event.preventDefault();
+                history.push(`/r/${subredditId}`)
                 resetPosts();
                 startedFetching();
+                event.preventDefault();
             }}>
             <Input
                 loading={isFetching}
@@ -45,4 +55,4 @@ const mapDispatchToProps = dispatch => ({
     resetPosts: () => dispatch(resetPostsAction()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SubredditSearch);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SubredditSearch));
