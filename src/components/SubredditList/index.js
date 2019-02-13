@@ -6,7 +6,7 @@ import { startedFetchingAction, lookForNewPostsAction, viewNewPostsAction } from
 import './SubredditList.css';
 import classNames from 'classnames';
 
-function SubredditList(props) {
+export function SubredditList(props) {
     const {
         posts,
         startedFetching,
@@ -22,38 +22,32 @@ function SubredditList(props) {
     }, [])
     return (
         <div className="subreddit-list__container">
-            {
-                posts.length ? (
-                    <React.Fragment>
-                        <div className={
-                            classNames({
-                                "subreddit-list__view-more-button": true,
-                                "not-visible": !newPosts.length,
-                            })
-                        } onClick={() => { if(newPosts.length) viewNewPosts() }}>
-                            <h3>
-                                See new posts ({newPosts.length})
-                            </h3>
-                        </div>
-                        <List divided relaxed className="subreddit-list__container">
-                            {posts.map((post) => <SubredditItem post={post} subredditId={subredditId} key={post.data.name} />)}
-                        </List>
-                        <div
-                            className={
-                            classNames({
-                                "subreddit-list__load-more-button": true,
-                                "disabled": !hasMore,
-                            })
-                            }
-                            onClick={() => { if(hasMore) startedFetching() }}
-                        >
-                            <h3>
-                                { hasMore ? "Load More" : "The end..." }
-                            </h3>
-                        </div>
-                    </React.Fragment>
-                ) : null
-            }
+            <div className={
+                classNames({
+                    "subreddit-list__view-more-button": true,
+                    "not-visible": !newPosts.length,
+                })
+            } onClick={() => { if(newPosts.length) viewNewPosts() }}>
+                <h3>
+                    See new posts ({newPosts.length})
+                </h3>
+            </div>
+            <List divided relaxed className="subreddit-list__container">
+                {posts.map((post) => <SubredditItem post={post} subredditId={subredditId} key={post.data.name} />)}
+            </List>
+            <div
+                className={
+                classNames({
+                    "subreddit-list__load-more-button": true,
+                    "disabled": !hasMore,
+                })
+                }
+                onClick={() => { if(hasMore) startedFetching() }}
+            >
+                <h3>
+                    { hasMore ? "Load More" : "The end..." }
+                </h3>
+            </div>
         </div>
     )
 };  

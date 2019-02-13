@@ -9,7 +9,7 @@ import {
 } from '../../store/actions/subredditActions';
 import './SubredditSearch.css';
 
-function SubredditSearch(props) {
+export function SubredditSearch(props) {
     const {
         subredditId,
         isFetching,
@@ -38,7 +38,8 @@ function SubredditSearch(props) {
                 loading={isFetching}
                 icon="search"
                 placeholder="Search..."
-                value={subredditId} onChange={(event) => setSubreddit(event.target.value)}
+                value={subredditId}
+                onChange={(event) => setSubreddit(event.target.value)}
             />
         </form>
     )

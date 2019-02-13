@@ -65,6 +65,7 @@ function SubredditItem(props) {
                     <List.Header
                             as='a'
                             href={`https://www.reddit.com${post.data.permalink}`}
+                            className="subreddit-item__info--comments"
                     >
                         <strong>({post.data.num_comments}) Comments</strong>
                     </List.Header>
