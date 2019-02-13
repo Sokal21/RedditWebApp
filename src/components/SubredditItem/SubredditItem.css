@@ -1,3 +1,8 @@
+@keyframes fadeIn {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
 .subreddit-item__image {
     height: 107px;
     width: 107px;
@@ -12,4 +17,11 @@
 
 .subreddit-item__info--subreddit {
     display: inline-block !important;
+}
+
+.subreddit-list__item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 5px !important;
+    animation: fadeIn 1s ease-in;
 }

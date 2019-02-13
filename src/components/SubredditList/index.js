@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Transition, animated } from 'react-spring/renderprops';
 import { List } from 'semantic-ui-react';
 import SubredditItem from '../SubredditItem';
 import { startedFetchingAction, lookForNewPostsAction, viewNewPostsAction } from '../../store/actions/subredditActions';
@@ -36,18 +35,8 @@ function SubredditList(props) {
                                 See new posts ({newPosts.length})
                             </h3>
                         </div>
-                        <List divided relaxed>
-                            <Transition
-                                native
-                                keys={posts.map((post) => post.data.id)}
-                                items={posts.map((post) => <SubredditItem post={post} subredditId={subredditId} />)}
-                                from={{ opacity: 0, height: 0 }}
-                                enter={{ opacity: 1, height: 'auto' }}
-                                leave={{ opacity: 0, height: 0 }}
-                                trail={100}
-                            >
-                                {post => props => <animated.div style={props} className="item">{post}</animated.div>}
-                            </Transition>
+                        <List divided relaxed className="subreddit-list__container">
+                            {posts.map((post) => <SubredditItem post={post} subredditId={subredditId} />)}
                         </List>
                         <div
                             className={

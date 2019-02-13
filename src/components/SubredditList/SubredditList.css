@@ -1,13 +1,3 @@
-.subreddit-list__container .item {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-}
-
-.subreddit-list__container .content {
-    margin-left: 10px;
-}
-
 .subreddit-list__container {
     width: 600px;
 }

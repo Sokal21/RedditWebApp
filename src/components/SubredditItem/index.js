@@ -33,7 +33,7 @@ function SubredditItem(props) {
         subredditId,
     } = props;
     return (
-        <List.Item>
+        <List.Item className="subreddit-list__item">
             {detectThumbnail(post)}
             <List.Content>
                 <List.Header href={post.data.url} as='a'>{post.data.title}</List.Header>
