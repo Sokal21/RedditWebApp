@@ -36,7 +36,7 @@ function SubredditList(props) {
                             </h3>
                         </div>
                         <List divided relaxed className="subreddit-list__container">
-                            {posts.map((post) => <SubredditItem post={post} subredditId={subredditId} />)}
+                            {posts.map((post) => <SubredditItem post={post} subredditId={subredditId} key={post.data.name} />)}
                         </List>
                         <div
                             className={
