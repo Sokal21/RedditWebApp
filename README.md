@@ -51,7 +51,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Why redux saga?
 
-Since the use of redux was mandatory for the assignment, redux saga was my frist option for handling asynccrhonous call to the reddit API. The tool let me detach de logic of the HTTP request from react components and have direct access to the redux store and dispatch.
+Since the use of redux was mandatory for the assignment, redux saga was my first option for handling asynccrhonous call to the reddit API. The tool let me detach de logic of the HTTP request from react components and have direct access to the redux store and dispatch.
 
 ## Why `create-react-app`?
 
