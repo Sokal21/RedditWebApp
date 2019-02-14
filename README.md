@@ -49,29 +49,29 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 # Design decisions
 
-## Why redux saga?
+## Why Redux Saga?
 
-Since the use of redux was mandatory for the assignment, redux saga was my first option for handling asynccrhonous call to the reddit API. The tool let me detach de logic of the HTTP request from react components and have direct access to the redux store and dispatch.
+Since the use of Redux was mandatory for the assignment, Redux Saga was my first option for handling asynchronous call to the reddit API. The tool gave me the ability to detach the logic of the HTTP request from React components and also has direct access to the Redux store and dispatcher.
 
 ## Why `create-react-app`?
 
-I choose this boilerplate becasue is simple, fast and reliable.     
+I chose this boilerplate becasue is simple, fast and reliable.     
 
 ## Why semantic-ui?
 
-I did not want to deal with css deisgn and I want to have a cool and consistent design all over the app. For solving this problem I select this very popular framework that provide me a lot of out of the box components with a very nice a minimal styles.
-
-## Why hooks?
-
-I was expecting so much the release of this new feature so I took this chance to put it on test. I'm a fan of functional programming and having the chance of getting rid of classes was a very cool experience. I decide to use the hooks for controlling the cycles of react component in a very fancy way. The only problem that I found was that the testing libraries for de shallow renders were not prepared for this feature so I had to look for some work arounds.
-
-In some components that I use the effect hook and the functions that were taken from props and used inside it seems to not been called when shallow or mount rendering of Enzyme was made, How to solve this? I use the re render function of `react-testing-library` and this let me test it. This is an example of this here:
+I did not want to deal with CSS design and I wanted to have a cool and consistent design all over the app. For solving this problem, I selected this very popular framework that provides me a lot of 'out of the box' components with a very nice and minimalistic styles.
 
 ## Why Enzyme and Jest?
 
-I'm very familiar with Enzyme API for testing react components so I decide to go with this for this kind of tasks.
+I'm very familiar with Enzyme API for testing React components so I decided to go with it for this kind of tasks.
 
-Jest is the default tool that `create-react-app` provide.
+Jest is the default tool that `create-react-app` provides.
+
+## Why hooks?
+
+I was really looking foward to this recent release bacuase of this new feature. So I took this oportunity to test it. I'm a fan of functional programming and having the chance of getting rid off classes was a very cool experience. I decided to use the hooks for controlling the cycles of React components in a very fancy way. The only problem that I found was that the testing libraries for the shallow renders were not prepared for this feature so I had to look for some work arounds.
+
+In some components in which I used the 'effect hook', the functions that were taken from props and used inside the hook, seemed to have not been called when shallow or mount rendering of Enzyme was made. How did I solve this? I used the re-render function of `react-testing-library` and I could test it. This is an example:
 
 ### SubredditList.test.js
 ```javascript
